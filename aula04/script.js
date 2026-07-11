@@ -1,19 +1,14 @@
-let maioridade = false;
-let idade = 19;
+const root = document.getElementById("root");
 
-const nomes = [
-  { nome: "giovani" },
-  { nome: "mateus" },
-  { nome: "guilherme" },
-  { nome: "lucas" },
-];
+root.classList.add("root");
+root.addEventListener("click", () => {
+  root.classList.add("vb");
+  root.textContent = "<stron>giovan";
+  const div = document.createElement("div");
+  div.classList.add("div");
 
-function buscar(nome){
-    const resultado = nomes.map(element => {
-        element.push({
-            nome: nome
-        })
-    })
-    return resultado
-}
-console.log(buscar("giovanik"))
+  root.appendChild(div);
+  setTimeout(() => {
+    root.removeChild(div);
+  }, 3000);
+});

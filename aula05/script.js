@@ -1,14 +1,35 @@
-const root = document.getElementById("root");
+const root = document.querySelector(".root")
+const texto = document.querySelector(".texto")
+const pass = document.querySelector(".pass")
+const btn = document.querySelector(".btn")
+const form = document.querySelector(".form")
 
-root.classList.add("root");
-root.addEventListener("click", () => {
-  root.classList.add("vb");
-  root.textContent = "<stron>giovan";
-  const div = document.createElement("div");
-  div.classList.add("div");
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    if(!texto.value || !pass.value){
+        alert("digite no campo de texto para entrare")
+        return
+    }
+    if(texto.value.length >= 30){
+        alert("passou o numero de contato")
+        return
+    }
 
-  root.appendChild(div);
-  setTimeout(() => {
-    root.removeChild(div);
-  }, 3000);
-});
+    const nome = document.createElement("div")
+    nome.classList.add("nome")
+
+    const senha = document.createElement("div")
+    senha.classList.add("senha")
+
+    nome.textContent = texto.value
+    senha.textContent = pass.value
+
+    
+
+    root.appendChild(nome)
+    root.appendChild(senha)
+    texto.value = ""
+    pass.value = ""
+})
+
+
