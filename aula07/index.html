@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        #password.verde {
+            border: 2px solid red;
+        }
+        .red{
+            border: 2px solid green;
+        }
+
+        #password {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form">
+        <input type="text" name="" id="texto">
+        <input type="password" name="" id="password">
+        <button type="submit">Entrar</button>
+
+    </form>
+    <script>
+        const texto = document.getElementById("texto")
+        const password = document.getElementById("password")
+        const form = document.querySelector(".form")
+        const btn = document.querySelector("button")
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            if (!texto.value || !password.value) {
+                alert("digite algo nos input")
+                return
+            } 
+        })
+        password.addEventListener("input", () => {
+            if (password.value.length >= 16) {
+                password.classList.add("verde");
+                return
+            } else if(password.value.length >= 6){
+                password.classList.add("red");
+                return
+            } else{
+                password.classList.remove("red", "verde")
+            }
+        });
+
+    </script>
+</body>
+
+</html>
