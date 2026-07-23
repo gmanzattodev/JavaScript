@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="quantidade">
+    <button id="butao">Mostrar</button>
+    <p class="precoFoto"></p>
+    <p class="precoUnitario"></p>
+    <select name="" id="tamanho">
+        <option value="10x15">10x15</option>
+        <option value="20x25">20x25</option>
+    </select>
+    <script>
+        const quantidade = document.getElementById("quantidade")
+        const botao = document.getElementById("butao")
+        const precoFoto = document.querySelector(".precoFoto")
+        const precoUnitario = document.querySelector(".precoUnitario")
+        const selectTamanho = document.querySelector("#tamanho")
+
+        quantidade.addEventListener("input", atualizar)
+        selectTamanho.addEventListener("change", atualizar)
+
+        function descobrirTamanho(tamanho, quantidade) {
+            if (tamanho === "20x30") {
+                if (quantidade <= 5) return 18;
+                if (quantidade <= 10) return 15;
+
+                return 12;
+            }
+
+            if (tamanho === "20x25") {
+                if (quantidade <= 5) return 15;
+                if (quantidade <= 9) return 13;
+
+                return 10;
+            }
+
+            if (tamanho === "15x21" || tamanho === "13x18") {
+                if (quantidade <= 5) return 7;
+                if (quantidade <= 9) return 5.5;
+                if (quantidade >= 30) return 3.5;
+
+                return 5;
+            }
+
+            if (tamanho === "10x15") {
+                if (quantidade <= 5) return 4;
+                if (quantidade <= 9) return 3;
+                if (quantidade >= 200) return 1.4;
+                if (quantidade >= 100) return 1.6;
+                if (quantidade >= 50) return 1.8;
+
+                return 2;
+            }
+        }
+
+        function atualizar() {
+            const tamanho = selectTamanho.value
+            const quantia = Number(quantidade.value)
+
+            const preco = descobrirTamanho(tamanho, quantia)
+
+            const total = quantia * preco
+
+            precoFoto.textContent = `Preço por foto: ${total}`
+            precoUnitario.textContent = `Preço unitario: ${preco}`
+        }
+    </script>
+</body>
+
+</html>
