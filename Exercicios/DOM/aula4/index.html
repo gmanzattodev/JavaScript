@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="lista"></ul>
+
+    <script>
+        const lista = document.querySelector(".lista")
+
+        const carro1 = document.createElement("li")
+        carro1.innerHTML = "Kombi"
+        const carro2 = document.createElement("li")
+        carro2.innerHTML = "Fusca"
+        const carro3 = document.createElement("li")
+        carro3.innerHTML = "Gol"
+        
+        lista.appendChild(carro1)
+        lista.appendChild(carro2)
+        lista.appendChild(carro3)
+    </script>
+</body>
+</html>

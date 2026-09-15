@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Veiculo Desligado</h1>
+    <button class="ligar">ligar</button>
+    <button class="desligar">Desligar</button>
+
+    <script>
+        const texto = document.querySelector("h1")
+        const ligar = document.querySelector(".ligar")
+        const desligar = document.querySelector(".desligar")
+
+        ligar.addEventListener("click", () => {
+            texto.textContent = "Veiculo ligado"
+        })
+
+        desligar.addEventListener("click", () => {
+            texto.textContent = "Veiculo desligado"
+        })
+    </script>
+</body>
+</html>

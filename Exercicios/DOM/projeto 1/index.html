@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        .ligado{
+            color: red;
+        }
+        .desligado{
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Central de Veículos</h1>
+    <input type="text" name="" id="input" />
+    <button class="adicionar">Adicionar veículo</button>
+    <button class="ligar">Ligar veiculo</button>
+    <button class="desligar">Desligar veiculo</button>
+
+    <ul class="lista"></ul>
+
+    <script>
+      const lista = document.querySelector(".lista");
+      const button = document.querySelector(".adicionar");
+      const input = document.querySelector("#input");
+      const desligar = document.querySelector(".desligar")
+      const ligar = document.querySelector(".ligar")
+
+      
+
+
+      button.addEventListener("click", () => {
+        const texto = input.value;
+        const li = document.createElement("li");
+        li.innerHTML = texto;
+        lista.appendChild(li);
+        input.value = ""
+      });
+      
+      ligar.addEventListener("click", () => {
+        
+        all.forEach((all) => {
+            all.classList.add("ligado")
+            all.classList.remove("desligado")
+        })
+      })
+
+      desligar.addEventListener("click", () => {
+        all.forEach((all) => {
+            all.classList.add("desligado")
+            all.classList.remove("ligado")
+        })
+      })
+      
+    </script>
+  </body>
+</html>

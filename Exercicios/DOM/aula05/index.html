@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .veiculo{
+            color: aquamarine;
+        }
+        .veiculo.ligado{
+            color: red;
+        }
+        .veiculo.desligado{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="veiculo">
+        <h2>Kombi</h2>
+
+        <button class="ligar">Ligar carro</button>
+        <button class="desligar">Desligar carro</button>
+
+        
+    </div>
+
+    <script>
+        const ligar = document.querySelector(".ligar")
+        const desligar = document.querySelector(".desligar")
+        const veiculo = document.querySelector(".veiculo")
+
+        ligar.addEventListener("click", () => {
+            veiculo.classList.add("ligado")
+            veiculo.classList.remove("desligado")
+        })
+        desligar.addEventListener("click", () => {
+            veiculo.classList.add("desligado")
+            veiculo.classList.remove("ligado")
+        })
+    </script>
+</body>
+</html>
