@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="lista">
+      <li data-modelo="Kombi" data-status="disponivel">Kombi</li>
+      <li data-modelo="Fusca" data-status="manutencao">Fusca</li>
+      <li data-modelo="Gol" data-status="disponivel">Gol</li>
+    </ul>
+
+    <script>
+    const all = document.querySelectorAll("li")
+
+    all.forEach((all) => {
+        console.log(all.dataset.modelo)
+        console.log(all.dataset.status)
+    })
+    </script>
+  </body>
+</html>
