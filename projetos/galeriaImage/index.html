@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        
+      }
+
+      .cardsImage {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .card{
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.116);
+        bottom: 2rem;
+        right: 4rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 4rem;
+        transition:
+        width 1s ease-in-out,
+        height 1s ease-in-out,
+        right 1s ease-in-out,
+        bottom 1s ease-in-out,
+        border-radius 1s ease-in-out;
+      }
+      .card:not(.active){
+        z-index: 2;
+        
+      }
+      .card h1, .card p, .card button{
+        opacity: 0;
+      }
+      .card.active{
+        position: absolute;
+        right: 0rem;
+        bottom: 0rem;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        z-index: 1;
+      }
+      .card.active h1, .card.active p, .card.active button{
+        animation: pass 1s forwards;
+        opacity: 1;
+      }
+      .card h1{
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 5rem;
+        animation: pass 1s forwards;
+      }
+      .card p{
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        animation: pass 1s forwards;
+      }
+      .card button{
+        width: 200px;
+        padding: 5px 10px;
+        animation: pass 1s forwards;
+        cursor: pointer;
+        animation: pass 1s forwards;
+      }
+      
+      .hero > button{
+        position: absolute;
+        left: 2rem;
+        z-index: 1;
+        bottom: 2rem;
+        padding: 10px;
+        cursor: pointer;
+        
+      }
+      .hero > button i{
+        font-size: 20px;
+      }
+      .hero > button:nth-child(2){
+        left: 6rem;
+      }
+
+      @keyframes pass {
+        0%{
+            transform: translateY(100px);
+            filter: blur(20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="cardsImage">
+        <div
+          class="card active"
+          style="
+            background: url(./iamge3.jpg) center center no-repeat;
+            background-size: cover;
+          "
+        >
+          <h1>Cidade</h1>
+          <p>Cidade bonita com muita casas e predios</p>
+          <button>Explorar</button>
+        </div>
+        <div
+          class="card"
+          style="
+            background: url(./image1.jpg) center center no-repeat;
+            background-size: cover;
+          "
+        >
+          <h1>amizade</h1>
+          <p>Cidade bonita com muita casas e predios</p>
+          <button>Explorar</button>
+        </div>
+        <div
+          class="card"
+          style="
+            background: url(./image.jpg) center center no-repeat;
+            background-size: cover;
+          "
+        >
+          <h1>amanha</h1>
+          <p>Cidade bonita com muita casas e predios</p>
+          <button>Explorar</button>
+        </div>
+        <div
+          class="card"
+          style="
+            background: url(./image2.jpg) center center no-repeat;
+            background-size: cover;
+          "
+        >
+          <h1>coisas</h1>
+          <p>Cidade bonita com muita casas e predios</p>
+          <button>Explorar</button>
+        </div>
+        <div
+          class="card"
+          style="
+            background: url(./image4.png) center center no-repeat;
+            background-size: cover;
+          "
+        >
+          <h1>Cidade</h1>
+          <p>Cidade bonita com muita casas e predios</p>
+          <button>Explorar</button>
+        </div>
+      </div>
+      <button class="proximo"><i class="ri-arrow-right-s-line"></i></button>
+      <button class="anterior"><i class="ri-arrow-left-s-line"></i></button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
