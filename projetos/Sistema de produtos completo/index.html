@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <header>
+          <div class="btn">
+            <button data-button="Todos">Todos</button>
+            <button data-button="Eletrônicos">Eletrônicos</button>
+            <button data-button="Acessórios">Acessórios</button>
+            <button data-button="Monitores">Monitores</button>
+            <button data-button="Smartphones">Smartphones</button>
+            <button data-button="Áudio">Áudio</button>
+            <button data-button="Wearables">Wearables</button>
+            <button data-button="Câmeras">Câmeras</button>
+            <button data-button="Componentes">Componentes</button>
+            <button data-button="Móveis">Móveis</button>
+            <button data-button="Games">Games</button>
+            <button data-button="Segurança">Segurança</button>
+            <button data-button="Redes">Redes</button>
+            <button data-button="Televisores">Televisores</button>
+          </div>
+
+          <div class="input">
+            <input type="text" id="text" placeholder="Digite nome do produto" />
+          </div>
+
+          <select id="preco">
+            <option value="quantidade">Preço</option>
+            <option value="0-100">R$ 0 - 100</option>
+            <option value="101-400">R$ 101 - 400</option>
+            <option value="401">+ R$ 401</option>
+          </select>
+
+          <select id="maior-menor">
+            <option value="valor">Preço</option>
+            <option value="menorPreco">Menor preço</option>
+            <option value="maiorPreco">Maior preço</option>
+          </select>
+
+          <div class="btn-limpar">
+            <button id="limpar">Limpar Filtros</button>
+          </div>
+        </header>
+
+        <article>
+          <div class="cards"></div>
+        </article>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
