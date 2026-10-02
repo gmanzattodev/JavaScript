@@ -82,38 +82,66 @@ formulario.addEventListener("submit", (evento) => {
   opcaoCategorias.value = "";
   prioridadeSelecionada = "";
 
-  pendentes.innerHTML = tarefas.length;
+  
   renderizarTarefas();
   modal.classList.remove("active");
 });
 
 const lista_tarefas = document.querySelector(".secao-fazer");
+const SecaoConcluida = document.querySelector(".secao-concluida");
 
 function renderizarTarefas() {
-  lista_tarefas.innerHTML = tarefas
-    .map((add) => {
-      return `
-<div class="tarefa">
-  <input type="checkbox" name="" class="input-check" id="check">
-  <div class="info">
-    <span style="color: ${add.color}">${add.categoria}</span>
-    <h4>${add.titulo}</h4>
-    <p>${add.descricao}</p>
-    <div class="infoValor">
-      <h3 style="color: ${add.colorPrioridade}; background-color: ${add.backgroundPrioridade}">${add.prioridade}</h3>
-      <p>${add.data}</p>
-    </div>
-  </div>
-</div>
-  
-  `;
-    })
-    .join("");
+  SecaoConcluida.innerHTML = "";
+
+  lista_tarefas.innerHTML = tarefas.map((add) => {
+    return `
+      <div class="tarefa">
+        <input
+          type="checkbox"
+          class="input-check"
+          ${add.concluido ? "checked" : ""}
+        >
+        <div class="info">
+          <span style="color: ${add.color}">${add.categoria}</span>
+          <h4>${add.titulo}</h4>
+          <p>${add.descricao}</p>
+          <div class="infoValor">
+            <h3 style="color: ${add.colorPrioridade}; background-color: ${add.backgroundPrioridade}">
+              ${add.prioridade}
+            </h3>
+            <p>${add.data}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  const checks = lista_tarefas.querySelectorAll(".input-check");
+
+  checks.forEach((check, indice) => {
+    const card = check.closest(".tarefa");
+
+    if (tarefas[indice].concluido) {
+      SecaoConcluida.appendChild(card);
+    }
+
+    check.addEventListener("change", () => {
+      tarefas[indice].concluido = check.checked;
+
+      if (check.checked) {
+        SecaoConcluida.appendChild(card);
+      } else {
+        lista_tarefas.appendChild(card);
+      }
+
+      atualizarContadores()
+    });
+    
+  });
 }
+atualizarContadores()
 
-const input_check = document.querySelector(".input-check")
-
-
-input_check.addEventListener("click", () => {
-  tarefas
-})
+function atualizarContadores() {
+  pendentes.textContent = lista_tarefas.querySelectorAll(".tarefa").length;
+  concluidas.textContent = SecaoConcluida.querySelectorAll(".tarefa").length;
+}

@@ -568,3 +568,9 @@ aside .categorias .list-categoria {
   color: #fff;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.secao-concluida{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
