@@ -91,20 +91,16 @@
             <i class="ri-checkbox-circle-line"></i>
             <div class="info">
               <p>Concluidas</p>
-              <span class="hoje"></span>
+              <span class="concluida"></span>
             </div>
           </div>
         </div>
         <article class="secoes">
           <article class="todos-secao">
-            <div class="secao-fazer">
-              <div class="list-fazer"></div>
-            </div>
+            <div class="secao-fazer"></div>
           </article>
           <article class="Proximas-secao">
-            <div class="secao-concluida">
-              <div class="list-concluido"></div>
-            </div>
+            <div class="secao-concluida"></div>
           </article>
         </article>
       </section>
@@ -139,9 +135,15 @@
             <div class="prioridade">
               <label for="prioridade">Prioridade</label>
               <div class="escolha">
-                <button type="button" class="baixa"><span></span>Baixa</button>
-                <button type="button" class="media"><span></span>Média</button>
-                <button type="button" class="alta"><span></span>Alta</button>
+                <button type="button" class="baixa" value="Baixa">
+                  <span></span>Baixa
+                </button>
+                <button type="button" class="media" value="Media">
+                  <span></span>Média
+                </button>
+                <button type="button" class="alta" value="Alta">
+                  <span></span>Alta
+                </button>
               </div>
             </div>
             <div class="entrega">
@@ -165,7 +167,9 @@
           </div>
           <div class="btn-modal">
             <button type="button" class="cancelar">Cancelar</button>
-            <button type="submit"><i class="ri-add-line"></i> Criar tarefa</button>
+            <button type="submit" id="criarTarefa">
+              <i class="ri-add-line"></i> Criar tarefa
+            </button>
           </div>
         </form>
       </article>
