@@ -1,4 +1,4 @@
-const idade = 21
+let velocidade = 21
+velocidade = 24 + 2
+console.log(velocidade)
 
-const idades = [21, 23, 42, 245]
-console.log(idades[0])
